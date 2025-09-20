@@ -6,14 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     #chatbox { 
-  height: 400px; 
-  overflow-y: auto; 
-  border: 1px solid #ccc; 
-  padding: 10px; 
-  margin-bottom: 10px; 
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    background: #f0f2f5;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 10px; 
 }
+     /* Usuario (gris claro) */
+  .user-bubble {
+    background: #e5e5ea;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+  }
+
+  /* BotCICA (azul claro institucional) */
+  .bot-bubble {
+    background: #4da6ff; /* tono azul claro */
+    color: white;
+    align-self: flex-start;
+    border-bottom-right-radius: 0;
+  }
 
 .msg { 
   max-width: 75%; 
@@ -30,6 +45,14 @@
   border-bottom-right-radius: 0; 
   text-align: right;
 }
+    .chat-bubble {
+    max-width: 75%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
 
 .bot { 
   align-self: flex-start; 
