@@ -5,19 +5,31 @@ const sendBtn = document.getElementById("send-btn");
 sendBtn.addEventListener("click", sendMessage);
 input.addEventListener("keydown", (e) => { if (e.key === "Enter") sendMessage(); });
 
-function appendUser(text) {
+/*function appendUser(text) {
   const p = document.createElement("p");
   p.className = "msg user";
   p.innerHTML = `<strong>Tú:</strong> ${escapeHtml(text)}`;
   chatbox.appendChild(p);
   chatbox.scrollTop = chatbox.scrollHeight;
+}*/function appendUser(text) {
+  const div = document.createElement("div");
+  div.className = "chat-bubble user-bubble";
+  div.innerHTML = `<span><strong>Tú:</strong> ${escapeHtml(text)}</span>`;
+  chatbox.appendChild(div);
+  chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-function appendBot(text) {
+/*function appendBot(text) {
   const p = document.createElement("p");
   p.className = "msg bot";
   p.innerHTML = `<strong>Asistente CICA:</strong> ${escapeHtml(text)}`;
   chatbox.appendChild(p);
+  chatbox.scrollTop = chatbox.scrollHeight;
+}*/function appendBot(text) {
+  const div = document.createElement("div");
+  div.className = "chat-bubble bot-bubble";
+  div.innerHTML = `<span><strong>BotCICA:</strong> ${escapeHtml(text)}</span>`;
+  chatbox.appendChild(div);
   chatbox.scrollTop = chatbox.scrollHeight;
 }
 
