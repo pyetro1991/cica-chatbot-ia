@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Asistente Virtual CICA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    #chatbox { 
+  height: 400px; 
+  overflow-y: auto; 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.msg { 
+  max-width: 75%; 
+  margin: 5px; 
+  padding: 8px 12px; 
+  border-radius: 12px; 
+  line-height: 1.4; 
+}
+
+.user { 
+  align-self: flex-end; 
+  background: #007BFF; 
+  color: white; 
+  border-bottom-right-radius: 0; 
+  text-align: right;
+}
+
+.bot { 
+  align-self: flex-start; 
+  background: #f1f0f0; 
+  color: #333; 
+  border-bottom-left-radius: 0; 
+  text-align: left;
+}
+
+  </style>
+</head>
+<body>
+  <div id="chatwrap">
+    <h2>Asistente Virtual CICA</h2>
+    <div id="chatbox" role="log" aria-live="polite"></div>
+
+    <div id="controls">
+      <input id="user-input" type="text" placeholder="Escribe tu respuesta o pregunta..." autocomplete="off" />
+      <button id="send-btn">Enviar</button>
+    </div>
+    
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+  <script>
+    // Mensaje inicial pidiendo el nombre
+    window.addEventListener("load", () => {
+      appendBot("¡Hola! Soy el Asistente Virtual del Instituto CICA. ¿Cómo puedo ayudarte?");
+      // colocar foco en input
+      document.getElementById("user-input").focus();
+    });
+  </script>
+</body>
+</html>
